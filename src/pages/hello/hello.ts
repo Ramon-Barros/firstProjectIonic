@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { HttpServiceProvider } from '../../providers/http-service/http-service';
 
 /**
  * Generated class for the HelloPage page.
@@ -13,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-hello',
   templateUrl: 'hello.html',
 })
-export class HelloPage {
+export class HelloPage implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  id;
+  product = {
+    'id':'','name': ''
+  };
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public httpService: HttpServiceProvider) {
 
-    alert('Ben-vindo');
+    this.id = this.navParams.get('productId');
+  }
+  ngOnInit() {
+    this.httpService.get(`products/${this.id}`).subscribe(data => this.product = data);
   }
 
   ionViewDidLoad() {

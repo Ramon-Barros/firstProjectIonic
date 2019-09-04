@@ -13,10 +13,13 @@
 
   <ion-list no-lines>
   
-    <li ion-item *ngFor="let product of products">{{product.name}}</li>
+    <button ion-item *ngFor="let product of products" (click)="goToSingle(product.id)">
+      {{product.name}}
+    </button>
   
   </ion-list>
-  <button ion-button (click)="goToPage()"><ion-icon name="heart"></ion-icon>Ir para Hello Page</button>
+
+  <button ion-button (click)="goToPage()">Produtos</button>
   <button ion-button (click)="goToAboutPage()" color="secondary">Sobre nós</button>
 
 </ion-content>

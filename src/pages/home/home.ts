@@ -12,7 +12,7 @@ import { HttpServiceProvider } from '../../providers/http-service/http-service';
 export class HomePage implements OnInit {
 
   products;
-  
+
   constructor(
     public navCtrl: NavController,
     public httpService: HttpServiceProvider
@@ -34,6 +34,12 @@ export class HomePage implements OnInit {
   goToAboutPage() {
 
     this.navCtrl.push(AboutPage);
+  }
+
+  goToSingle(productId) {
+    this.navCtrl.push(HelloPage, {
+      'productId': productId
+    });
   }
 
 }
