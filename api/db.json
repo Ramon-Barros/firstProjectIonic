@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Feijão"
+        },
+        {
+            "id": 2,
+            "name": "Arroz"
+        },
+        {
+            "id": 3,
+            "name": "Macarrão"
+        },
+        {
+            "id": 4,
+            "name": "Açucar"
+        },
+        {
+            "id": 5,
+            "name": "Café"
+        },
+        {
+            "id": 6,
+            "name": "Pipoca"
+        },
+        {
+            "id": 7,
+            "name": "Biscoito"
+        }
+    ]
+}

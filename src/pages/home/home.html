@@ -8,10 +8,14 @@
 
 <ion-content padding>
   The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <h1>Produtos</h1>
 
+  <ion-list no-lines>
+  
+    <li ion-item *ngFor="let product of products">{{product.name}}</li>
+  
+  </ion-list>
   <button ion-button (click)="goToPage()"><ion-icon name="heart"></ion-icon>Ir para Hello Page</button>
   <button ion-button (click)="goToAboutPage()" color="secondary">Sobre nós</button>
 
