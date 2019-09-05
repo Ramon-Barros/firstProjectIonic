@@ -5,10 +5,6 @@
       "name": "Feijão"
     },
     {
-      "id": 2,
-      "name": "Arroz"
-    },
-    {
       "id": 3,
       "name": "Macarrão"
     },
@@ -25,16 +21,16 @@
       "name": "Pipoca"
     },
     {
-      "id": 7,
-      "name": "Biscoito"
-    },
-    {
       "name": "Leite em pó",
       "id": 8
     },
     {
       "name": "Leite Liquido",
       "id": 9
+    },
+    {
+      "name": "Arroz",
+      "id": 10
     }
   ]
 }

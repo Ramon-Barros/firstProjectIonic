@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Product } from '../../model/product.model';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { ToastProvider } from '../../providers/toast/toast';
+
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CreatePage page.
@@ -24,7 +27,8 @@ export class CreatePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private httpService: HttpServiceProvider) {
+    private httpService: HttpServiceProvider,
+    private toastService: ToastProvider) {
   }
 
   ionViewDidLoad() {
@@ -32,7 +36,11 @@ export class CreatePage {
   }
 
   createProduct() {
-    this.httpService.post('products',this.product).subscribe(res => console.log(res));
+    this.httpService.post('products',this.product)
+                    .subscribe(res => {
+                      this.toastService.createToast('Produto criado com sucesso!'),
+                      this.navCtrl.setRoot(HomePage);
+                    });
   }
 
 }
