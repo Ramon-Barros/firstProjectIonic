@@ -22,4 +22,9 @@ export class HttpServiceProvider {
     return this.http.get<Observable<any>>(`${this.API_URL}/${endpoint}`);
   }
 
+  post (endpoint: string, data: Object) {
+
+    return this.http.post(`${this.API_URL}/${endpoint}`, data);
+  }
+
 }

@@ -37,4 +37,6 @@ export class HelloPage implements OnInit{
     console.log('ionViewDidLoad HelloPage');
   }
 
+  
+
 }

@@ -4,6 +4,7 @@ import { HelloPage } from '../hello/hello';
 import { AboutPage } from '../about/about';
 
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
+import { CreatePage } from '../create/create';
 
 @Component({
   selector: 'page-home',
@@ -40,6 +41,10 @@ export class HomePage implements OnInit {
     this.navCtrl.push(HelloPage, {
       'productId': productId
     });
+  }
+
+  goToCreatePage() {
+    this.navCtrl.push(CreatePage);
   }
 
 }
