@@ -29,8 +29,12 @@
       "name": "Biscoito"
     },
     {
-      "name": "Leite",
+      "name": "Leite em pó",
       "id": 8
+    },
+    {
+      "name": "Leite Liquido",
+      "id": 9
     }
   ]
 }

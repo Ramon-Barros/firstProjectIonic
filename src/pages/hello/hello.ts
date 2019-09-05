@@ -20,7 +20,7 @@ import { Product } from '../../model/product.model';
 export class HelloPage implements OnInit{
 
   id;
-  product: Observable<Product>;
+  product: Product = {id: null, name: null};
 
   constructor(
     public navCtrl: NavController, 
@@ -29,12 +29,13 @@ export class HelloPage implements OnInit{
 
     this.id = this.navParams.get('productId');
   }
+
   ngOnInit() {
-    this.httpService.get(`products/${this.id}`).subscribe(data => this.product = data);
+    this.httpService.getById(`products/${this.id}`).subscribe(data => this.product = data);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HelloPage');
+  updateProduct() {
+    this.httpService.put(`products/${this.id}`, this.product).subscribe(data=> console.log(data));
   }
 
   
