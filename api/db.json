@@ -21,16 +21,20 @@
       "name": "Pipoca"
     },
     {
-      "name": "Leite em pó",
-      "id": 8
-    },
-    {
       "name": "Leite Liquido",
       "id": 9
     },
     {
       "name": "Arroz",
       "id": 10
+    },
+    {
+      "id": 11,
+      "name": "Farinha seca"
+    },
+    {
+      "name": "Biscoito",
+      "id": 12
     }
   ]
 }

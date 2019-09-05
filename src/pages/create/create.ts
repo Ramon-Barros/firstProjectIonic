@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Product } from '../../model/product.model';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { ToastProvider } from '../../providers/toast/toast';
 
 import { HomePage } from '../home/home';
+import { FormGroup, FormControl } from '@angular/forms';
 
 /**
  * Generated class for the CreatePage page.
@@ -18,11 +19,13 @@ import { HomePage } from '../home/home';
   selector: 'page-create',
   templateUrl: 'create.html',
 })
-export class CreatePage {
+export class CreatePage implements OnInit{
 
   product: Product = {
     name: null
   };
+
+  productForm: FormGroup;
 
   constructor(
     public navCtrl: NavController, 
@@ -31,12 +34,14 @@ export class CreatePage {
     private toastService: ToastProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CreatePage');
+  ngOnInit(){
+    this.productForm = new FormGroup ({
+      'name': new FormControl('')
+    });
   }
 
   createProduct() {
-    this.httpService.post('products',this.product)
+    this.httpService.post('products',this.productForm.value)
                     .subscribe(res => {
                       this.toastService.createToast('Produto criado com sucesso!'),
                       this.navCtrl.setRoot(HomePage);

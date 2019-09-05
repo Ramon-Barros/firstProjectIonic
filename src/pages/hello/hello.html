@@ -14,14 +14,16 @@
 
     
     <ion-list>
+      <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
         <ion-item>
           <ion-label floating>Nome do Produto</ion-label>
-          <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+          <ion-input type="text" formControlName="name"></ion-input>
         </ion-item>
         <ion-item>
-          <button ion-button (click)="updateProduct()">Atualizar</button>
-          <button ion-button color="danger" (click)="deleteProduct()">Remover</button>
-        </ion-item>
-      </ion-list>
+          <button ion-button>Atualizar</button>          
+        </ion-item>      
+    </form>
+    <button ion-button color="danger" (click)="deleteProduct()">Remover</button>
+  </ion-list>
 
 </ion-content>
