@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
+  The world is your oyster. Ramon
   
   <h1>Produtos</h1>
 
   <ion-list no-lines>
   
-    <button ion-item *ngFor="let product of products" (click)="goToSingle(product.id)">
+    <button ion-item *ngFor="let product of products|async" (click)="goToSingle(product.id)">
       {{product.name}}
     </button>
   

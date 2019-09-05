@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the HttpServiceProvider provider.
@@ -17,8 +18,8 @@ export class HttpServiceProvider {
   }
 
   get (endpoint: string) {
-
-    return this.http.get(`${this.API_URL}/${endpoint}`);
+      /*colocando o observable para fazer as requisições*/
+    return this.http.get<Observable<any>>(`${this.API_URL}/${endpoint}`);
   }
 
 }
